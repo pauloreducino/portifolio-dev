@@ -16,16 +16,16 @@ export default function Header() {
         {/* Navegação desktop */}
         <nav className="hidden md:flex gap-6 text-[16px] items-center">
           <a href="#about" className="hover:text-gray-400 transition">
-            About
+            Sobre
           </a>
           <a href="#work" className="hover:text-gray-400 transition">
-            Work
+            Trabalhos
           </a>
           <a href="#testimonials" className="hover:text-gray-400 transition">
-            Testimonials
+            Testemunhos
           </a>
           <a href="#contact" className="hover:text-gray-400 transition">
-            Contact
+            Contato
           </a>
 
           {/* Separador */}
@@ -56,16 +56,16 @@ export default function Header() {
         <div className="md:hidden px-4 pb-4 transition">
           <nav className="flex flex-col gap-4 text-sm">
             <a href="#about" className="hover:text-gray-400 transition">
-              About
+              Sobre
             </a>
             <a href="#work" className="hover:text-gray-400 transition">
-              Work
+              Trabalhos
             </a>
             <a href="#testimonials" className="hover:text-gray-400 transition">
-              Testimonials
+              Testemunhos
             </a>
             <a href="#contact" className="hover:text-gray-400 transition">
-              Contact
+              Contato
             </a>
 
             <div className="flex items-center justify-end mt-4">

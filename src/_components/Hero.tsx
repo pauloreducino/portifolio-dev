@@ -1,6 +1,5 @@
 "use client";
 
-// 1. O ícone 'Figma' foi importado no lugar do 'Dribbble'
 import { MapPin, Dot, Github, Linkedin, Figma } from "lucide-react";
 import Image from "next/image";
 
@@ -54,7 +53,6 @@ export default function Hero() {
             >
               <Linkedin size={20} />
             </a>
-            {/* 2. O link e o ícone do Dribbble foram trocados pelo do Figma */}
             <a
               href="#"
               aria-label="Figma"

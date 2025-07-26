@@ -26,7 +26,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Texto */}
           <div className="max-w-2xl text-sm sm:text-base text-gray-300">
             <h3 className="text-white text-xl sm:text-2xl font-semibold mb-6">
               Curioso sobre mim? Aqui vai:
@@ -56,7 +55,6 @@ export default function About() {
               sentido quando é compartilhado.
             </p>
 
-            {/* LISTA COM LAYOUT CORRIGIDO 👇 */}
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-6">
               <li className="flex items-start gap-2">
                 <span>🧠</span>

@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 // 1. ÍCONE E DADOS
-// Um SVG simples para o ícone de link externo no canto do card
+
 const ExternalLinkIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ interface Project {
   projectLink: string;
 }
 
-// Dados de exemplo baseados na imagem. Adicione seus próprios projetos aqui.
+// Dados de exemplo. Adicione seus próprios projetos aqui.
 const projects: Project[] = [
   {
     title: "Project One",

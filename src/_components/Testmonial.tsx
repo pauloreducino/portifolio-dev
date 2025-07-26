@@ -99,14 +99,12 @@ const Testimonial: React.FC = () => {
           </h2>
         </div>
 
-        {/* Layout para DESKTOP (lg e acima) - Grid */}
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
 
-        {/* Layout para MOBILE E TABLET (abaixo de lg) - Carrossel */}
         <div className="lg:hidden">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex -ml-4">
