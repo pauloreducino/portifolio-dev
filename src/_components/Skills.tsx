@@ -48,10 +48,10 @@ export default function Skills() {
     <section className="bg-[#010512] w-full py-16 text-white text-center px-4">
       <div className="max-w-[1128px] mx-auto">
         <span className="text-sm bg-gray-700 font-medium text-gray-300 px-4 py-2 rounded-full mb-4 inline-block">
-          Skills
+          Habilidades
         </span>
         <h2 className="text-xl sm:text-2xl text-gray-300 mb-8">
-          The skills, tools and technologies I am really good at:
+          As habilidades, ferramentas e tecnologias em que sou realmente bom:
         </h2>
 
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-x-6 gap-y-6 justify-items-center">

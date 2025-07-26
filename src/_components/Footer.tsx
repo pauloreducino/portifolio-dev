@@ -1,10 +1,9 @@
-"use client"; // Necessário para interatividade (copiar para clipboard)
+"use client";
 
 import React, { useState } from "react";
 
-// ============================================================================
 // 1. ÍCONES SVG (Definidos localmente para manter o componente autossuficiente)
-// ============================================================================
+
 const MailIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -104,15 +103,12 @@ const FigmaIcon = () => (
   </svg>
 );
 
-// ============================================================================
 // 2. COMPONENTE PRINCIPAL DO FOOTER
-// ============================================================================
+
 const Footer: React.FC = () => {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
 
   const handleCopy = (text: string, itemName: string) => {
-    // A API navigator.clipboard pode não estar disponível em contextos não seguros (não-HTTPS)
-    // ou em iframes com restrições. Adicionar uma verificação para evitar erros.
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
         .writeText(text)
@@ -127,8 +123,6 @@ const Footer: React.FC = () => {
           // Opcional: Implementar um fallback, como um prompt para o usuário copiar manualmente.
         });
     } else {
-      // Fallback para ambientes onde a Clipboard API não é suportada.
-      // Usa o método 'execCommand', que é mais antigo mas tem maior compatibilidade.
       const textArea = document.createElement("textarea");
       textArea.value = text;
       textArea.style.position = "fixed"; // Evita rolagem na página
@@ -152,21 +146,20 @@ const Footer: React.FC = () => {
   const email = "paulo.a.reducino@gmail.com";
   const phone = "+55 98 97026-5510";
 
-  // CORREÇÃO: Adicionado um nome a cada link para usar no aria-label.
   const socialLinks = [
     {
       name: "Github",
-      href: "https://github.com/SeuUsuario",
+      href: "https://github.com/pauloreducino",
       icon: <GithubIcon />,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/SeuUsuario",
+      href: "https://linkedin.com/in/pauloreducino",
       icon: <LinkedinIcon />,
     },
     {
       name: "Figma",
-      href: "https://figma.com/@SeuUsuario",
+      href: "https://figma.com/@pauloreducino",
       icon: <FigmaIcon />,
     },
   ];
@@ -177,14 +170,15 @@ const Footer: React.FC = () => {
         {/* Badge */}
         <div className="mb-8">
           <span className="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">
-            Get in touch
+            Entre em contato
           </span>
         </div>
 
         {/* Texto principal */}
         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-12">
-          What's next? Feel free to reach out to me if you're looking for a
-          developer, have a query, or simply want to connect.
+          Estou disponível para novos projetos e parcerias. Se você procura um
+          desenvolvedor para transformar sua ideia em realidade ou fortalecer
+          sua equipe, adoraria conversar sobre seus objetivos.
         </p>
 
         {/* Informações de Contato */}
@@ -233,11 +227,10 @@ const Footer: React.FC = () => {
           <div className="flex justify-center gap-4">
             {socialLinks.map((link) => (
               <a
-                key={link.name} // Usar o nome como chave é mais estável que o índice
+                key={link.name}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                // CORREÇÃO: Adicionado aria-label para acessibilidade.
                 aria-label={`Visite meu perfil no ${link.name}`}
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >

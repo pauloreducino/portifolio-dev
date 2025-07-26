@@ -1,13 +1,9 @@
-"use client"; // Necessário para interatividade (copiar para clipboard)
+"use client";
 
 import React from "react";
 import Image from "next/image";
 
-// ============================================================================
 // 1. ÍCONE E DADOS
-// SVG para o ícone de link externo e os dados dos projetos.
-// ============================================================================
-
 // Um SVG simples para o ícone de link externo no canto do card
 const ExternalLinkIcon = () => (
   <svg
@@ -75,9 +71,8 @@ const projects: Project[] = [
   },
 ];
 
-// ============================================================================
 // 2. COMPONENTE INTERNO DO CARD DO PROJETO
-// ============================================================================
+
 interface ProjectCardProps {
   project: Project;
 }
@@ -125,19 +120,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   );
 };
 
-// ============================================================================
 // 3. COMPONENTE PRINCIPAL DA SEÇÃO "WORK" (EXPORTADO)
-// ============================================================================
+
 const Work: React.FC = () => {
   return (
     <section className="bg-[#010512] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1128px] mx-auto">
         <div className="text-center mb-16">
           <span className="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">
-            Work
+            Trabalhos
           </span>
           <h2 className="mt-4 text-2xl md:text-3xl text-gray-300">
-            Some of the noteworthy projects I have built:
+            Alguns dos projetos notáveis que construí
           </h2>
         </div>
 

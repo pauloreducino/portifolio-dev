@@ -1,12 +1,10 @@
-"use client"; // Necessário para usar hooks de estado e efeito no carrossel
+"use client";
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
-// ============================================================================
 // 1. DADOS E TIPOS
-// ============================================================================
 interface Testimonial {
   quote: string;
   authorName: string;
@@ -21,27 +19,26 @@ const testimonials: Testimonial[] = [
       "Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development.",
     authorName: "John Doe",
     authorRole: "Founder – xyz.com",
-    avatarUrl: "/avatar-placeholder.png", // Troque pelo caminho do seu avatar
+    avatarUrl: "/avatar-placeholder.png",
   },
   {
     quote:
       "Great guy, highly recommended for any COMPLEX front-end development job! His skills are top-notch and he will be an amazing addition to any team.",
     authorName: "John Doe",
     authorRole: "Founder – abc.com",
-    avatarUrl: "/avatar-placeholder.png", // Troque pelo caminho do seu avatar
+    avatarUrl: "/avatar-placeholder.png",
   },
   {
     quote:
       "Sagar was extremely easy and pleasant to work with and he truly cares about the project being a success. Sagar has a high level of knowledge and was able to work on my MERN stack application without any issues.",
     authorName: "John Doe",
     authorRole: "Freelancer",
-    avatarUrl: "/avatar-placeholder.png", // Troque pelo caminho do seu avatar
+    avatarUrl: "/avatar-placeholder.png",
   },
 ];
 
-// ============================================================================
 // 2. COMPONENTE INTERNO DO CARD DE DEPOIMENTO
-// ============================================================================
+
 interface TestimonialCardProps {
   testimonial: Testimonial;
 }
@@ -69,9 +66,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
   );
 };
 
-// ============================================================================
 // 3. COMPONENTE PRINCIPAL (EXPORTADO) COM LÓGICA DE CARROSSEL
-// ============================================================================
+
 const Testimonial: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -96,10 +92,10 @@ const Testimonial: React.FC = () => {
       <div className="max-w-[1128px] mx-auto">
         <div className="text-center mb-16">
           <span className="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">
-            Testimonials
+            Testemunhos
           </span>
           <h2 className="mt-4 text-2xl md:text-3xl text-gray-300">
-            Nice things people have said about me:
+            Coisas boas que as pessoas disseram sobre mim:
           </h2>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { MapPin, Dot, Github, Linkedin, Dribbble } from "lucide-react";
+// 1. O ícone 'Figma' foi importado no lugar do 'Dribbble'
+import { MapPin, Dot, Github, Linkedin, Figma } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -10,20 +11,19 @@ export default function Hero() {
         {/* Texto */}
         <div className="flex-1 max-w-[768px]">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Hi, I’m <span className="text-white">Paulo Reducino</span>{" "}
+            Olá, Sou <span className="text-white">Paulo Reducino</span>{" "}
             <span className="inline-block animate-wave">👋</span>
           </h1>
 
           <p className="text-gray-400 leading-relaxed mb-6 text-sm sm:text-base">
-            I’m a passionate full stack developer with over 5 years of
-            experience building modern, performant, and accessible web
-            applications using technologies like React.js, Node.js, Next.js, and
-            TypeScript. I love transforming ideas into elegant digital
-            experiences — combining clean code with thoughtful design to create
-            solutions that are not only functional, but enjoyable to use.
-            Whether it's building scalable backends or crafting responsive,
-            pixel-perfect frontends, I'm always focused on delivering
-            high-quality results.
+            Sou um criador de soluções digitais apaixonado por tecnologia. Como
+            desenvolvedor frontend há mais de 5 anos, minha missão é dar vida a
+            ideias através de código. Minhas ferramentas são React, Next.js,
+            Node.js e TypeScript, e com elas construo universos digitais: desde
+            a fundação robusta de um backend escalável até interfaces elegantes
+            e responsivas que encantam os usuários. Para mim, um bom software é
+            a harmonia perfeita entre lógica, design e uma experiência humana
+            memorável.
           </p>
 
           {/* Localização e disponibilidade */}
@@ -34,32 +34,33 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <Dot size={24} className="text-green-400" strokeWidth={8} />
-              <span>Available for new projects</span>
+              <span>Disponível para novos projetos</span>
             </div>
           </div>
 
           {/* Ícones sociais */}
           <div className="flex gap-4 text-gray-400">
             <a
-              href="#"
+              href="https://github.com/pauloreducino"
               aria-label="GitHub"
               className="hover:text-white transition"
             >
               <Github size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/pauloreducino/"
               aria-label="Linkedin"
               className="hover:text-white transition"
             >
               <Linkedin size={20} />
             </a>
+            {/* 2. O link e o ícone do Dribbble foram trocados pelo do Figma */}
             <a
               href="#"
-              aria-label="Dribbble"
+              aria-label="Figma"
               className="hover:text-white transition"
             >
-              <Dribbble size={20} />
+              <Figma size={20} />
             </a>
           </div>
         </div>
