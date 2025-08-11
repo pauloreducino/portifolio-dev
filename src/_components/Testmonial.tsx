@@ -17,23 +17,23 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development.",
-    authorName: "John Doe",
+    authorName: "Alice Serejo",
     authorRole: "Founder – xyz.com",
-    avatarUrl: "/avatar-placeholder.png",
+    avatarUrl: "/testimonials/pessoa01.jpg",
   },
   {
     quote:
       "Great guy, highly recommended for any COMPLEX front-end development job! His skills are top-notch and he will be an amazing addition to any team.",
     authorName: "John Doe",
     authorRole: "Founder – abc.com",
-    avatarUrl: "/avatar-placeholder.png",
+    avatarUrl: "/testimonials/pessoa02.jpg",
   },
   {
     quote:
       "Sagar was extremely easy and pleasant to work with and he truly cares about the project being a success. Sagar has a high level of knowledge and was able to work on my MERN stack application without any issues.",
     authorName: "John Doe",
     authorRole: "Freelancer",
-    avatarUrl: "/avatar-placeholder.png",
+    avatarUrl: "/testimonials/pessoa03.jpg",
   },
 ];
 
@@ -46,13 +46,16 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
   return (
     <div className="bg-gray-800 rounded-lg shadow-lg p-8 h-full flex flex-col items-center text-center">
-      <Image
-        src={testimonial.avatarUrl}
-        alt={`Avatar de ${testimonial.authorName}`}
-        width={80}
-        height={80}
-        className="rounded-full mb-6 border-2 border-gray-700"
-      />
+      <div className="w-20 h-20 mb-6 rounded-full border-2 border-gray-700 overflow-hidden">
+        <Image
+          src={testimonial.avatarUrl}
+          alt={`Avatar de ${testimonial.authorName}`}
+          width={90}
+          height={90}
+          className="object-cover object-center w-full h-full"
+        />
+      </div>
+
       <blockquote className="text-gray-300 italic mb-6 flex-grow">
         “{testimonial.quote}”
       </blockquote>

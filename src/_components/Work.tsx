@@ -35,7 +35,7 @@ interface Project {
 // Dados de exemplo. Adicione seus próprios projetos aqui.
 const projects: Project[] = [
   {
-    title: "Project One",
+    title: "Projeto - EPSSO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
     tags: [
@@ -50,16 +50,16 @@ const projects: Project[] = [
       "Storybook",
       "Git",
     ],
-    imageUrl: "/work/Picture.png",
-    projectLink: "#",
+    imageUrl: "/work/trampo01.png",
+    projectLink: "https://epsso.com.br/",
   },
   {
-    title: "Project Two",
+    title: "Projeto - NEXTPM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
     tags: ["React", "Vite", "Firebase", "Tailwindcss", "Git"],
-    imageUrl: "/work/Picture.png",
-    projectLink: "#",
+    imageUrl: "/work/trampo02.png",
+    projectLink: "https://nextpm.com.br/",
   },
   {
     title: "Project Three",
