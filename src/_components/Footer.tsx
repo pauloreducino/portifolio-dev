@@ -222,7 +222,7 @@ const Footer: React.FC = () => {
         {/* Links Sociais */}
         <div>
           <p className="text-gray-400 mb-4">
-            You may also find me on these platforms!
+            Você também pode me encontrar nessas plataformas!
           </p>
           <div className="flex justify-center gap-4">
             {socialLinks.map((link) => (

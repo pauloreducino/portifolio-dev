@@ -16,29 +16,28 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development.",
+      "Trabalho bem feito! Estou realmente impressionada. Ele é muito, muito bom no que faz :) Eu recomendaria o Paulo e o contrataria novamente no futuro para desenvolvimento front-end.",
     authorName: "Alice Serejo",
     authorRole: "Founder – xyz.com",
     avatarUrl: "/testimonials/pessoa01.jpg",
   },
   {
     quote:
-      "Great guy, highly recommended for any COMPLEX front-end development job! His skills are top-notch and he will be an amazing addition to any team.",
-    authorName: "John Doe",
+      "Ótimo cara, altamente recomendado para qualquer trabalho COMPLEXO de desenvolvimento front-end! Suas habilidades são de primeira e ele será uma adição incrível a qualquer equipe.",
+    authorName: "Henrique Martins",
     authorRole: "Founder – abc.com",
     avatarUrl: "/testimonials/pessoa02.jpg",
   },
   {
     quote:
-      "Sagar was extremely easy and pleasant to work with and he truly cares about the project being a success. Sagar has a high level of knowledge and was able to work on my MERN stack application without any issues.",
-    authorName: "John Doe",
+      "Foi extremamente fácil e agradável trabalhar com o Paulo, que realmente se importa com o sucesso do projeto. Ele tem um alto nível de conhecimento e conseguiu trabalhar na minha aplicação MERN sem problemas.",
+    authorName: "Pedro Sousa",
     authorRole: "Freelancer",
     avatarUrl: "/testimonials/pessoa03.jpg",
   },
 ];
 
 // 2. COMPONENTE INTERNO DO CARD DE DEPOIMENTO
-
 interface TestimonialCardProps {
   testimonial: Testimonial;
 }
@@ -70,7 +69,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
 };
 
 // 3. COMPONENTE PRINCIPAL (EXPORTADO) COM LÓGICA DE CARROSSEL
-
 const Testimonial: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -91,8 +89,8 @@ const Testimonial: React.FC = () => {
   }, [emblaApi, updateCurrent]);
 
   return (
-    <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1128px] mx-auto">
+    <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-[1128px] mx-auto relative">
         <div className="text-center mb-16">
           <span className="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">
             Testemunhos
@@ -102,12 +100,14 @@ const Testimonial: React.FC = () => {
           </h2>
         </div>
 
+        {/* Grid Desktop */}
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
 
+        {/* Carrossel Mobile */}
         <div className="lg:hidden">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex -ml-4">
@@ -134,6 +134,13 @@ const Testimonial: React.FC = () => {
               />
             ))}
           </div>
+        </div>
+
+        {/* Overlay de "Em Construção" */}
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900/70 backdrop-blur-md rounded-lg">
+          <p className="text-gray-200 text-lg md:text-2xl font-semibold text-center px-4">
+            🚧 Em construção, disponível em breve 🚧
+          </p>
         </div>
       </div>
     </section>

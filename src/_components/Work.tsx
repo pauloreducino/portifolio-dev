@@ -37,7 +37,7 @@ const projects: Project[] = [
   {
     title: "Projeto - EPSSO",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "O projeto EPSSO é uma aplicação web desenvolvida utilizando as tecnologias React, Next.js e TypeScript, garantindo um código robusto, escalável e tipado. O estilo é implementado com Tailwind CSS, permitindo um desenvolvimento rápido e responsivo com classes utilitárias, seguindo abordagem mobile-first.",
     tags: [
       "React",
       "Next.js",
@@ -47,7 +47,7 @@ const projects: Project[] = [
       "Tailwindcss",
       "Figma",
       "Cypress",
-      "Storybook",
+      "Hostgator",
       "Git",
     ],
     imageUrl: "/work/trampo01.png",
@@ -57,15 +57,15 @@ const projects: Project[] = [
     title: "Projeto - NEXTPM",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    tags: ["React", "Vite", "Firebase", "Tailwindcss", "Git"],
+    tags: ["Next.js", "Vite", "Hostgator", "Tailwindcss", "Git"],
     imageUrl: "/work/trampo02.png",
     projectLink: "https://nextpm.com.br/",
   },
   {
-    title: "Project Three",
+    title: "Projeto - Doctor Care",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    tags: ["HTML", "CSS", "Javascript", "Figma", "Git"],
+    tags: ["Next.js", "Tailwind CSS", "Javascript", "Figma", "Git"],
     imageUrl: "/work/Picture.png",
     projectLink: "#",
   },
@@ -86,7 +86,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           alt={`Imagem do projeto ${project.title}`}
           width={600}
           height={400}
-          className="w-full h-48 object-cover"
+          className="w-full h-48"
         />
         <a
           href={project.projectLink}

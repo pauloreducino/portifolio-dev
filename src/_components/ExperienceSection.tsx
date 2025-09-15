@@ -39,17 +39,17 @@ const experiences: Experience[] = [
       "Execução de projetos desde o layout (Figma) até o deploy final, com atenção à fidelidade visual, usabilidade e boas práticas de acessibilidade.",
     ],
   },
-  {
-    companyLogo: "/logos/upwork_logo.png",
-    companyUrl: "https://www.upwork.com",
-    jobTitle: "Full Stack Developer",
-    dateRange: "Dec 2015 - May 2017",
-    responsibilities: [
-      "Desenvolvimento de soluções completas utilizando PHP, MySQL e jQuery para clientes remotos.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    ],
-  },
+  // {
+  //   companyLogo: "/logos/upwork_logo.png",
+  //   companyUrl: "https://www.upwork.com",
+  //   jobTitle: "Full Stack Developer",
+  //   dateRange: "Dec 2015 - May 2017",
+  //   responsibilities: [
+  //     "Desenvolvimento de soluções completas utilizando PHP, MySQL e jQuery para clientes remotos.",
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   ],
+  // },
 ];
 
 // 2. COMPONENTE DO CARD

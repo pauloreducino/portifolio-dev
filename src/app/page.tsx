@@ -1,11 +1,4 @@
 // app/page.tsx
-
-export const metadata = {
-  title: "Início | Portfólio",
-  description:
-    "Bem-vindo ao meu portfólio! Veja meus projetos, experiências e habilidades como desenvolvedor Front-end.",
-};
-
 import Header from "../_components/Header";
 import Hero from "../_components/Hero";
 import About from "../_components/About";
@@ -19,6 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
+
       <Hero />
       <About />
       <Skills />
