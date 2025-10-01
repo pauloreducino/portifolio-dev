@@ -44,21 +44,21 @@ export default function Hero() {
               aria-label="GitHub"
               className="hover:text-white transition"
             >
-              <Github size={20} />
+              <Github size={30} />
             </a>
             <a
               href="https://www.linkedin.com/in/pauloreducino/"
               aria-label="Linkedin"
               className="hover:text-white transition"
             >
-              <Linkedin size={20} />
+              <Linkedin size={30} />
             </a>
             <a
               href="#"
               aria-label="Figma"
               className="hover:text-white transition"
             >
-              <Figma size={20} />
+              <Figma size={30} />
             </a>
           </div>
         </div>

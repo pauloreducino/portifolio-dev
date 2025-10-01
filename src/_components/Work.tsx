@@ -60,7 +60,7 @@ const projects: Project[] = [
       "Desenvolvimento de landing page moderna e responsiva para divulgação da certificação PMP, utilizando Next.js, Vite e TailwindCSS, com foco em performance e SEO.",
     tags: ["Next.js", "Vite", "Hostgator", "Tailwindcss", "Git"],
     imageUrl: "/work/trampo02.png",
-    projectLink: "https://nextpm.com.br/",
+    projectLink: "#",
   },
   {
     title: "Projeto - Doctor Care",
