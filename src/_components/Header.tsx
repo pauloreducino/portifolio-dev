@@ -32,7 +32,10 @@ export default function Header() {
           <div className="w-px h-5 bg-gray-600" />
 
           {/* Botão Download CV */}
-          <Link href="/cv.pdf" download>
+          <Link
+            href="/curriculo/Curriculo_Paulo_Reducino_Dev_Frontend.pdf"
+            download
+          >
             <button className="ml-2 bg-white text-black text-sm px-4 py-2 rounded-xl hover:bg-gray-200 transition cursor-pointer">
               Download CV
             </button>

@@ -37,12 +37,13 @@ const projects: Project[] = [
   {
     title: "Projeto - EPSSO",
     description:
-      "O projeto EPSSO é uma aplicação web desenvolvida utilizando as tecnologias React, Next.js e TypeScript, garantindo um código robusto, escalável e tipado. O estilo é implementado com Tailwind CSS, permitindo um desenvolvimento rápido e responsivo com classes utilitárias, seguindo abordagem mobile-first.",
+      "O projeto EPSSO é uma aplicação web desenvolvida utilizando as tecnologias React, Next.js e TypeScript, garantindo um código robusto, escalável e tipado. O estilo é implementado com Tailwind CSS, permitindo um desenvolvimento rápido e responsivo com classes utilitárias.",
     tags: [
       "React",
       "Next.js",
       "Typescript",
-      "Nest.js",
+      "WordPress",
+      "REST API",
       "PostgreSQL",
       "Tailwindcss",
       "Figma",
@@ -56,7 +57,7 @@ const projects: Project[] = [
   {
     title: "Projeto - NEXTPM",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "Desenvolvimento de landing page moderna e responsiva para divulgação da certificação PMP, utilizando Next.js, Vite e TailwindCSS, com foco em performance e SEO.",
     tags: ["Next.js", "Vite", "Hostgator", "Tailwindcss", "Git"],
     imageUrl: "/work/trampo02.png",
     projectLink: "https://nextpm.com.br/",
@@ -64,7 +65,7 @@ const projects: Project[] = [
   {
     title: "Projeto - Doctor Care",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "Desenvolvimento de landing page responsiva com Next.js e Tailwind CSS, garantindo alta performance, SEO otimizado e fidelidade ao design criado no Figma.",
     tags: ["Next.js", "Tailwind CSS", "Javascript", "Figma", "Git"],
     imageUrl: "/work/Picture.png",
     projectLink: "#",
