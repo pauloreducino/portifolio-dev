@@ -4,18 +4,16 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="bg-gray-900 w-full py-20 px-4 text-white">
+    <section id="about" className="bg-gray-900 w-full py-20 px-4 text-white">
       <div className="max-w-[1128px] mx-auto flex flex-col gap-10">
         {/* Título da seção */}
         <h2 className="text-white text-2xl sm:text-3xl font-bold">Sobre mim</h2>
 
         {/* Conteúdo: imagem + texto */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
-          {/* Imagem com frame à esquerda e embaixo */}
+          {/* Imagem com frame */}
           <div className="relative w-[280px] sm:w-[320px] lg:w-[360px] h-[420px] sm:h-[460px] lg:h-[500px]">
-            {/* Frame */}
             <div className="absolute left-0 bottom-0 w-full h-full bg-[#374151] border-l-[20px] border-b-[20px] border-[#1B1F24] rounded-lg translate-x-[-12px] translate-y-[12px] z-0" />
-            {/* Imagem */}
             <div className="absolute top-0 left-0 w-full h-full z-10 overflow-hidden rounded-md">
               <Image
                 src="/about/pauloreducino.jpg"

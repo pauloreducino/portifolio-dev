@@ -7,26 +7,50 @@ import Link from "next/link";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <header className="bg-[#010512] text-white transition-colors duration-300">
+    <header className="bg-[#010512] text-white transition-colors duration-300 fixed w-full z-50">
       <div className="max-w-[1128px] mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-lg font-bold">{"<SS />"}</div>
+        <div
+          className="text-lg font-bold cursor-pointer"
+          onClick={() => scrollToSection("about")}
+        >
+          {"<SS />"}
+        </div>
 
         {/* Navegação desktop */}
         <nav className="hidden md:flex gap-6 text-[16px] items-center">
-          <a href="#about" className="hover:text-gray-400 transition">
+          <button
+            onClick={() => scrollToSection("about")}
+            className="hover:text-gray-400 transition"
+          >
             Sobre
-          </a>
-          <a href="#work" className="hover:text-gray-400 transition">
+          </button>
+          <button
+            onClick={() => scrollToSection("work")}
+            className="hover:text-gray-400 transition"
+          >
             Trabalhos
-          </a>
-          <a href="#testimonials" className="hover:text-gray-400 transition">
+          </button>
+          <button
+            onClick={() => scrollToSection("testimonials")}
+            className="hover:text-gray-400 transition"
+          >
             Testemunhos
-          </a>
-          <a href="#contact" className="hover:text-gray-400 transition">
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="hover:text-gray-400 transition"
+          >
             Contato
-          </a>
+          </button>
 
           {/* Separador */}
           <div className="w-px h-5 bg-gray-600" />
@@ -58,21 +82,48 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 pb-4 transition">
           <nav className="flex flex-col gap-4 text-sm">
-            <a href="#about" className="hover:text-gray-400 transition">
+            <button
+              onClick={() => {
+                scrollToSection("about");
+                setIsMobileMenuOpen(false);
+              }}
+              className="hover:text-gray-400 transition"
+            >
               Sobre
-            </a>
-            <a href="#work" className="hover:text-gray-400 transition">
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("work");
+                setIsMobileMenuOpen(false);
+              }}
+              className="hover:text-gray-400 transition"
+            >
               Trabalhos
-            </a>
-            <a href="#testimonials" className="hover:text-gray-400 transition">
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("testimonials");
+                setIsMobileMenuOpen(false);
+              }}
+              className="hover:text-gray-400 transition"
+            >
               Testemunhos
-            </a>
-            <a href="#contact" className="hover:text-gray-400 transition">
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("contact");
+                setIsMobileMenuOpen(false);
+              }}
+              className="hover:text-gray-400 transition"
+            >
               Contato
-            </a>
+            </button>
 
             <div className="flex items-center justify-end mt-4">
-              <Link href="/cv.pdf" download>
+              <Link
+                href="/curriculo/Curriculo_Paulo_Reducino_Dev_Frontend.pdf"
+                download
+              >
                 <button className="bg-white text-black text-sm px-4 py-2 rounded-xl hover:bg-gray-200 transition cursor-pointer">
                   Download CV
                 </button>

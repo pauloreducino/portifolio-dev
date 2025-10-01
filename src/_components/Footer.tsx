@@ -165,7 +165,10 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#010512] py-20 px-4 sm:px-6 lg:px-8 text-center">
+    <footer
+      id="contact"
+      className="bg-[#010512] py-20 px-4 sm:px-6 lg:px-8 text-center"
+    >
       <div className="max-w-4xl mx-auto">
         {/* Badge */}
         <div className="mb-8">
