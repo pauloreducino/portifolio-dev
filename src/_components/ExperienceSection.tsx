@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
+// Imports da Framer Motion
+import { motion, useInView, useAnimation, type Variants } from "framer-motion";
 
-// 1. DADOS E TIPOS
+// 1. DADOS E TIPOS (INTOCADOS)
 interface Experience {
   companyLogo: string;
   companyUrl: string;
@@ -15,6 +17,7 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  // ... sua lista de experiências aqui, sem alterações
   {
     companyLogo: "/servicos/surtocriativo_logo.jpg",
     companyUrl: "https://www.linkedin.com/company/surtocriativo/",
@@ -57,7 +60,7 @@ const experiences: Experience[] = [
   },
 ];
 
-// 2. COMPONENTE DO CARD
+// 2. COMPONENTE DO CARD (INTOCADO)
 interface ExperienceCardProps {
   experience: Experience;
   index: number;
@@ -67,10 +70,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   experience,
   index,
 }) => {
+  // ... seu componente ExperienceCard aqui, sem nenhuma alteração
   if (index === 0) {
-    // Primeira experiência: descrição + subtítulo + lista
     const [description, subtitle, ...tasks] = experience.responsibilities;
-
     return (
       <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-md flex flex-col md:flex-row gap-6 md:gap-8 w-full md:w-[896px] mx-auto">
         <div className="flex-shrink-0 md:w-1/4">
@@ -94,7 +96,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
             </p>
           </div>
         </div>
-
         <div className="md:w-3/4">
           <div className="flex justify-between items-center mb-4">
             <h4 className="text-xl font-bold text-gray-100">
@@ -104,20 +105,14 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               {experience.dateRange}
             </p>
           </div>
-
-          {/* Descrição inicial */}
           <p className="text-gray-200 font-semibold text-sm sm:text-base mb-4">
             {description}
           </p>
-
-          {/* Subtítulo sem bolinha */}
           {subtitle && (
             <p className="text-gray-300 font-bold text-sm sm:text-base mb-2">
               {subtitle}
             </p>
           )}
-
-          {/* Lista das atividades */}
           <ul className="list-disc list-inside text-gray-300 space-y-3 text-sm sm:text-base">
             {tasks.map((resp, i) => (
               <li key={i}>{resp}</li>
@@ -128,9 +123,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
     );
   }
 
-  // Outras experiências: seguem como estavam (primeira linha título, resto lista)
   const [title, ...responsibilities] = experience.responsibilities;
-
   return (
     <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-md flex flex-col md:flex-row gap-6 md:gap-8 w-full md:w-[896px] mx-auto">
       <div className="flex-shrink-0 md:w-1/4">
@@ -154,7 +147,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           </p>
         </div>
       </div>
-
       <div className="md:w-3/4">
         <div className="flex justify-between items-center mb-4">
           <h4 className="text-xl font-bold text-gray-100">
@@ -164,13 +156,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
             {experience.dateRange}
           </p>
         </div>
-
-        {/* Título destacado */}
         <p className="text-gray-200 font-semibold text-sm sm:text-base mb-4">
           {title}
         </p>
-
-        {/* Lista */}
         <ul className="list-disc list-inside text-gray-300 space-y-3 text-sm sm:text-base">
           {responsibilities.map((resp, i) => (
             <li key={i}>{resp}</li>
@@ -181,20 +169,17 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   );
 };
 
-// 3. COMPONENTE PRINCIPAL
+// 3. COMPONENTE PRINCIPAL (COM ANIMAÇÕES ADICIONADAS)
 export const ExperienceSection: React.FC = () => {
+  // Lógica do carrossel (INTOCADA)
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
-
   const updateCurrent = useCallback(() => {
-    if (emblaApi) {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    }
+    if (emblaApi) setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
     emblaApi.on("select", updateCurrent);
@@ -203,27 +188,87 @@ export const ExperienceSection: React.FC = () => {
     };
   }, [emblaApi, updateCurrent]);
 
+  // Lógica de animação (ADICIONADA)
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  // Variantes de animação
+  const titleVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const listVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const mobileCarouselVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.4 },
+    },
+  };
+
   return (
-    <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="max-w-[1128px] mx-auto">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          animate={controls}
+          variants={titleVariants}
+        >
           <span className="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">
             Experiência
           </span>
           <h2 className="mt-4 text-2xl md:text-3xl text-gray-300">
             Aqui está um rápido resumo das minhas experiências mais recentes:
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Desktop */}
-        <div className="hidden md:block space-y-8">
+        {/* Desktop - com animação em cascata */}
+        <motion.div
+          className="hidden md:block space-y-8"
+          initial="hidden"
+          animate={controls}
+          variants={listVariants}
+        >
           {experiences.map((exp, index) => (
-            <ExperienceCard key={index} experience={exp} index={index} />
+            <motion.div key={index} variants={cardVariants}>
+              <ExperienceCard experience={exp} index={index} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Mobile */}
-        <div className="md:hidden">
+        {/* Mobile - com animação de bloco único */}
+        <motion.div
+          className="md:hidden"
+          initial="hidden"
+          animate={controls}
+          variants={mobileCarouselVariants}
+        >
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {experiences.map((exp, index) => (
@@ -233,8 +278,6 @@ export const ExperienceSection: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Paginação */}
           <div className="flex justify-center items-center mt-8 space-x-3">
             {experiences.map((_, index) => (
               <button
@@ -249,7 +292,7 @@ export const ExperienceSection: React.FC = () => {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
